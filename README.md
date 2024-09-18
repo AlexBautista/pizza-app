@@ -7,6 +7,12 @@ To run the application in a docker container, simply:
 ```
 docker run -dp 8000:8000  balat2020/pizza-app:latest
 ```
+Visit Create order page (To create an order)
+[http://localhost:30001/order](http://localhost:30001/order)
+
+Visit Main Order Page (To see the list of orders created)
+[http://localhost:30001](http://localhost:30001)
+
 ## Kubernetes Cluster setup
 
 1.-Create PV and PVC
@@ -18,9 +24,3 @@ kubectl apply -f pvc.yaml
 ```
 kubectl apply -f kb.yaml
 ```
-
-Visit Create order page
-[http://localhost:30001/order](http://localhost:30001/order)
-
-Visit Main Order Page
-[http://localhost:30001](http://localhost:30001)
