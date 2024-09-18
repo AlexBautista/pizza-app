@@ -3,7 +3,7 @@
 Application to register Pizza Orders and display them in a web form
 On your machine withe Kubernetes installed simply:
 
-To run the application in a docker container with a persitent volume, simply 
+To run the application in a docker container, simply:
 ```
 docker run -dp 8000:8000  balat2020/pizza-app:latest
 ```
@@ -14,7 +14,7 @@ docker run -dp 8000:8000  balat2020/pizza-app:latest
 kubectl apply -f pv.yaml
 kubectl apply -f pvc.yaml
 ```
-2.-Create Kubernetes cluster
+2.-Apply Kubernetes cluster Deployment
 ```
 kubectl apply -f kb.yaml
 ```
