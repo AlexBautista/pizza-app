@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Order your Pizza!🍕</h1>
+    <br/><br/>
+    <form method="POST" action="{% url 'order' %}">
+    {% csrf_token %}    
+        <div class="form-group">         
+          <input type="text" class="form-control" placeholder="Customer Name" name="customername" value="{{customername}}">          
+        </div>
+        <div class="form-group">        
+            <select name="pizza_flavor" class="form-control" placeholder="Pizza Flavor" value="{{pizza_flavor}}">
+                <option value="">--Choose your Pizza--</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Supreme">Supreme</option>
+                <option value="Chicago">Chicago</option>
+              </select>
+        </div>
+        <div class="form-group">         
+            <input type="text" class="form-control" placeholder="Special Instructions" name="sinstructions" value="{{sinstructions}}">          
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Order!</button>
+      </form>
+{% endblock %}

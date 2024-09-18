@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: kb-demo
+   namespace: default
+spec:
+   replicas: 2
+   selector:
+      matchLabels:
+         kb: web
+   template:
+      metadata:
+         labels:
+            kb: web
+      spec:
+         containers:
+            - name: kb-site
+              image: balat2020/pizza-app:latest
+              imagePullPolicy: Always            
+              volumeMounts:
+                - name:  pizza-app-data
+                  mountPath: /data               
+         volumes:
+          - name: pizza-app-data
+            persistentVolumeClaim:
+              claimName: pvc-pizza-app      
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: kb-entrypoint
+   namespace: default
+spec:
+   type: NodePort
+   selector:
+      kb: web
+   ports:
+      - port: 8000
+        targetPort: 8000
+        nodePort: 30001

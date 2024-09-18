@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+    <h1>Pizza Orders🍕</h1>
+
+    {% for item in all %}
+        Customer Name:<strong>{{ item.customername }}</strong><br/>
+        Pizza Flavor:{{ item.pizza_flavor}}<br/>
+        Special Instructions: {{item.sinstructions}}<br/>
+        <hr>
+    {% endfor %}
+
+{% endblock %}
