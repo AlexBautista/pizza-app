@@ -1,4 +1,4 @@
-# pizza-app
+# pizza-app 🍕🍕🍕
 ## Small application to register Pizza orders from a webform.
 Application to register Pizza Orders and display them in a web form
 On your machine withe Kubernetes installed simply:
