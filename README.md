@@ -3,6 +3,8 @@
 Application to register Pizza Orders and display them in a web form
 On your machine withe Kubernetes installed simply:
 
+## Run it as a Docker container
+
 To run the application in a docker container, simply:
 ```
 docker run -dp 8000:8000  balat2020/pizza-app:latest
